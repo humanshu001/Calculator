@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(15, 15, 15);
+            font-family: cursive;
+            background-color: palevioletred;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .calc {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgb(127, 127, 243);
+            width: 300px;
+            padding: 30px;
+            border: 5px solid rgb(0, 0, 0);
+            border-radius: 5px;
+            height: 480px;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            color: rgb(0, 0, 0);
+            background-color: palevioletred;
+            font-size: 30px;
+            border: 3px solid rgb(0, 0, 0);
+            font-family: cursive;
+            border-radius: 5px;
+        }
+
+        .screen p {
+            background-color: palevioletred;
+            width: 280px;
+            text-align: end;
+            font-family: cursive;
+            height: 60px;
+            margin: 5px;
+            border: 3px solid black;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            font-size: 40px;
+        }
+
+        .clear {
+            width: 190px;
+        }
+
+        .title {
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title p {
+            text-align: center;
+            font-size: 60px;
+            background-color: rgb(127, 127, 243);
+            width: 550px;
+            border: 6px solid black;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .calcbody {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+
+        .introbox {
+            background-color: rgb(127, 127, 243);
+            margin: 20px;
+            padding-right: 20px;
+            border: 5px solid black;
+            font-size: 20px;
+            border-radius: 5px;
+            font-weight: 900;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .calc span {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        #screen-content {
+            margin-right: 5px;
+        }
+        .document{
+            background-color: rgb(127, 127, 243);
+            width: 700px;
+            padding: 10px;
+            border: 5px solid black;
+            border-radius: 5px;
+            position: absolute;
+            top: 80px;
+            left: 10px;
+        }
+        code{
+            font-size: 20px;
+        }
+        #toggleButton{
+            width: 230px;
+            background-color: rgb(127, 127, 243);
+            border: 5px solid;
+            font-weight: 600;
+        }
+        #toggleButton2{
+            width: 250px;
+            background-color: rgb(127, 127, 243);
+            border: 5px solid;
+            font-weight: 600;
+            position: absolute;
+            top: 50%;
+            left: -90px;
+            transform: rotate(90deg);
+        }
+        #toggleButton3{
+            width: 250px;
+            background-color: rgb(127, 127, 243);
+            border: 5px solid;
+            font-weight: 600;
+            position: absolute;
+            top: 50%;
+            right: -90px;
+            transform: rotate(-90deg);
+        }
+        .contact{
+            background-color: rgb(127, 127, 243);
+            position: absolute;
+            top: 50%;
+            border: 5px solid black;
+            left: 90px;
+            padding-right: 20px;
+        }
+        .projects{
+            background-color: rgb(127, 127, 243);
+            position: absolute;
+            top: 50%;
+            border: 5px solid black;
+            right: 90px;
+            padding-right: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        img{
+            width: 20px;
+        }
+        .contact ul{
+            list-style: none;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <button id="toggleButton3">My Projects</button>
+        <div id="documentationBox3" class="hidden projects">
+            <h1>My First Website</h1>
+            
+        </div>
+        <button id="toggleButton2">More Like This</button>
+        <div id="documentationBox2" class="hidden contact">
+            <ul>
+                <li><img src="github.png" alt=""> Github: <a href="https://github.com/humanshu001">humanshu001</a></li>
+                <li><img  src="linkedin.png" alt=""> LinkedIn: <a href="https://in.linkedin.com/in/humanshu-jaglan-213590284">Humanshu Jaglan</a></li>
+                <li><img src="insta.png" alt=""> Instagram: <a href="https://www.instagram.com/humanshu_jaat123/">humanshu_jaat123</a></li>
+
+            </ul>
+        </div>
+        <button id="toggleButton">Documentation</button>
+        <div id="documentationBox" class="hidden document">
+            
+                <h1>Calculator JavaScript Code Documentation</h1>
+            
+                <h2>Variables:</h2>
+                <ul>
+                    <li><code>runningTotal</code>: Stores the result of calculations.</li>
+                    <li><code>buffer</code>: Stores the current input.</li>
+                    <li><code>previousOperator</code>: Stores the previous operator used.</li>
+                    <li><code>maxBufferLength</code>: Specifies the maximum allowed length for the input buffer.</li>
+                </ul>
+            
+                <h2>DOM Elements:</h2>
+                <ul>
+                    <li><code>screen</code>: Reference to the screen element where input and results are displayed.</li>
+                    <li><code>buttons</code>: Reference to all calculator buttons.</li>
+                </ul>
+            
+                <h2>Function: <code>buttonClick(value)</code></h2>
+                <ul>
+                    <li>Handles button clicks.</li>
+                    <li>Determines whether the clicked value is a number or a symbol and delegates to the appropriate function.</li>
+                </ul>
+            
+                <h2>Function: <code>handleSymbol(symbol)</code></h2>
+                <ul>
+                    <li>Handles symbol inputs such as "C", "=", "←", "+", "-", "*", "/".</li>
+                    <li>Clears the calculator, calculates the result, handles backspace, and performs mathematical operations.</li>
+                </ul>
+            
+                <h2>Function: <code>handleMath(symbol)</code></h2>
+                <ul>
+                    <li>Handles mathematical operations.</li>
+                    <li>Converts the current buffer to an integer and updates the running total based on the previous operator.</li>
+                </ul>
+            
+                <h2>Function: <code>flushOperation(intBuffer)</code></h2>
+                <ul>
+                    <li>Performs the actual mathematical operation based on the previous operator.</li>
+                </ul>
+            
+                <h2>Function: <code>handleNumber(numberString)</code></h2>
+                <ul>
+                    <li>Handles numeric inputs.</li>
+                    <li>Appends the numeric input to the buffer, considering the maximum buffer length.</li>
+                </ul>
+            
+                <h2>Function: <code>updateScreen()</code></h2>
+                <ul>
+                    <li>Updates the screen with the current buffer content while preserving styling.</li>
+                    <li>Displays only the last 10 digits if the number is too long.</li>
+                </ul>
+            
+                <h2>Function: <code>init()</code></h2>
+                <ul>
+                    <li>Initializes the calculator by adding click event listeners to buttons.</li>
+                </ul>
+            
+                <h2>Initialization:</h2>
+                <ul>
+                    <li>Adds a DOMContentLoaded event listener to ensure the calculator is initialized after the page loads.</li>
+                </ul>
+            
+        </div>
+    </div>
+    <div class="title">
+        <p>MY CALCULATOR PROJECT</p>
+    </div>
+    <div class="calcbody">
+        <div class="calc">
+            <span>CALCULATOR</span>
+            <div class="screen">
+                <p>
+                    <span id="screen-content">0</span>
+                </p>
+            </div>
+            <div>
+                <button class="calc-button">0</button>
+                <button class="calc-button">←</button>
+                <button class="calc-button">C</button>
+                <button class="calc-button">*</button>
+            </div>
+            <div>
+                <button class="calc-button">9</button>
+                <button class="calc-button">8</button>
+                <button class="calc-button">7</button>
+                <button class="calc-button">/</button>
+            </div>
+            <div>
+                <button class="calc-button">6</button>
+                <button class="calc-button">5</button>
+                <button class="calc-button">4</button>
+                <button class="calc-button">+</button>
+            </div>
+            <div>
+                <button class="calc-button">3</button>
+                <button class="calc-button">2</button>
+                <button class="calc-button">1</button>
+                <button class="calc-button">-</button>
+            </div>
+            <div>
+                <button class="calc-button clear">=</button>
+            </div>
+        </div>
+    </div>
+    <div class="intro">
+        <div class="introbox">
+            <ul>
+                <li>Made by Humanshu Jaglan</li>
+                <li>B.Tech CSE Ist Year Student</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    let runningTotal = 0;
+    let buffer = "0";
+    let previousOperator;
+
+    const screen = document.querySelector('.screen');
+    const buttons = document.querySelectorAll(".calc-button");
+    const maxBufferLength = 15;
+
+    function buttonClick(value) {
+        if (isNaN(value)) {
+            handleSymbol(value);
+        } else {
+            handleNumber(value);
+        }
+        document.getElementById('screen-content').innerText = buffer;
+    }
+
+    function handleSymbol(symbol) {
+        switch (symbol) {
+            case "C":
+                buffer = "0";
+                runningTotal = 0;
+                break;
+            case "=":
+                if (previousOperator == null) {
+                    return;
+                }
+                flushOperation(parseInt(buffer));
+                previousOperator = null;
+                buffer = runningTotal.toString(); // Convert the result to a string
+                runningTotal = 0;
+                break;
+            case "←":
+                if (buffer.length === 1) {
+                    buffer = "0";
+                } else {
+                    buffer = buffer.slice(0, -1);
+                }
+                break;
+            case "+":
+            case "-":
+            case "*":
+            case "/":
+                handleMath(symbol);
+                break;
+        }
+    }
+
+    function handleMath(symbol) {
+        if (buffer === "0") {
+            return;
+        }
+
+        const intBuffer = parseInt(buffer);
+        if (runningTotal === 0) {
+            runningTotal = intBuffer;
+        } else {
+            flushOperation(intBuffer);
+        }
+        previousOperator = symbol;
+        buffer = "0";
+    }
+
+    function flushOperation(intBuffer) {
+        switch (previousOperator) {
+            case "+":
+                runningTotal += intBuffer;
+                break;
+            case "-":
+                runningTotal -= intBuffer;
+                break;
+            case "*":
+                runningTotal *= intBuffer;
+                break;
+            case "/":
+                runningTotal /= intBuffer;
+                break;
+        }
+    }
+    function updateScreen() {
+        if (buffer.length > 10) {
+            screen.textContent = "..." + buffer.slice(-10);
+        } else {
+            screen.textContent = buffer;
+        }
+    }
+    function handleNumber(numberString) {
+        if (buffer.length < maxBufferLength) {
+            if (buffer === "0" || screen.textContent === "0") {
+                buffer = numberString;
+            } else {
+                buffer += numberString;
+            }
+            document.getElementById('screen-content').textContent = buffer;
+        }
+
+    }
+
+    function init() {
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                buttonClick(event.target.innerText);
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        init();
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggleButton");
+        const toggleButton2 = document.getElementById("toggleButton2");
+        const documentationBox = document.getElementById("documentationBox");
+        const documentationBox2 = document.getElementById("documentationBox2");
+
+        toggleButton.addEventListener("click", function () {
+            documentationBox.classList.toggle("hidden");
+        });
+        toggleButton2.addEventListener("click", function () {
+            documentationBox2.classList.toggle("hidden");
+        });
+    });
+
+</script>
+
+</html>
