@@ -115,7 +115,8 @@
             border-radius: 5px;
             position: absolute;
             top: 80px;
-            left: 10px;
+            left: 50px;
+            z-index: 100;
         }
         code{
             font-size: 20px;
@@ -127,13 +128,13 @@
             font-weight: 600;
         }
         #toggleButton2{
-            width: 250px;
+            width: 200px;
             background-color: rgb(127, 127, 243);
             border: 5px solid;
             font-weight: 600;
             position: absolute;
             top: 50%;
-            left: -90px;
+            left: -70px;
             transform: rotate(90deg);
         }
         #toggleButton3{
@@ -142,7 +143,7 @@
             border: 5px solid;
             font-weight: 600;
             position: absolute;
-            top: 50%;
+            top: 30%;
             right: -90px;
             transform: rotate(-90deg);
         }
@@ -153,18 +154,22 @@
             border: 5px solid black;
             left: 90px;
             padding-right: 20px;
+            z-index: 200;
         }
         .projects{
             background-color: rgb(127, 127, 243);
             position: absolute;
-            top: 50%;
+            top: 10%;
+            width: 600px;
             border: 5px solid black;
             right: 90px;
-            padding-right: 20px;
+            padding: 20px;
+            z-index: 100;
         }
         a{
             text-decoration: none;
             color: black;
+            font-size: 20px;
         }
         a:hover{
             text-decoration: underline;
@@ -176,7 +181,9 @@
             list-style: none;
             font-size: 20px;
         }
-        
+        .projects ul{
+            list-style: none;
+        }
     </style>
 </head>
 
@@ -184,15 +191,22 @@
     <div class="buttons">
         <button id="toggleButton3">My Projects</button>
         <div id="documentationBox3" class="hidden projects">
-            <h1>My First Website</h1>
-            
+            <h1>My First Full Stack E-Commerce Website</h1>
+            <p>It took me 1 month to learn full stack web development. The Features of this website are User Authentication, Buy Products, Checkout System, Wishlist, Appointment Form and Feedback. </p>
+            <ul><li><a target="_blank" href="https://github.com/humanshu001/Jaglan-Jewellry">Jaglan Jewellry</a></li></ul>
+            <h1>My First Webpage with HTML & CSS only</h1>
+            <p>This is my first Webpage when I have learnt HTML & CSS. This took me a whole day because I am using CSS Grid with which I am not so comfortable & also I am new to CSS Grid. But after that day I started using CSS Flex-Box which I am using till now. </p>
+            <ul><li><a target="_blank" href="https://github.com/humanshu001/My-First-Webpage">My First Webpage</a></li></ul>
+            <h1>Calculator</h1>
+            <p>This is a Calculator Website where you can perform simple operations like addition, subtraction, division and multiplication. The Maximum input is 15 digits. I loved color combination of this website a lot.</p>
+            <ul><li><a target="_blank" href="https://github.com/humanshu001/Calculator">Calculator</a></li></ul>
         </div>
-        <button id="toggleButton2">More Like This</button>
+        <button id="toggleButton2">Contact</button>
         <div id="documentationBox2" class="hidden contact">
             <ul>
-                <li><img src="github.png" alt=""> Github: <a href="https://github.com/humanshu001">humanshu001</a></li>
-                <li><img  src="linkedin.png" alt=""> LinkedIn: <a href="https://in.linkedin.com/in/humanshu-jaglan-213590284">Humanshu Jaglan</a></li>
-                <li><img src="insta.png" alt=""> Instagram: <a href="https://www.instagram.com/humanshu_jaat123/">humanshu_jaat123</a></li>
+                <li><img src="github.png" alt=""> Github: <a href="https://github.com/humanshu001" target="_blank">humanshu001</a></li>
+                <li><img  src="linkedin.png" alt=""> LinkedIn: <a href="https://in.linkedin.com/in/humanshu-jaglan-213590284" target="_blank">Humanshu Jaglan</a></li>
+                <li><img src="insta.png" alt=""> Instagram: <a href="https://www.instagram.com/humanshu_jaat123/" target="_blank">humanshu_jaat123</a></li>
 
             </ul>
         </div>
@@ -424,14 +438,19 @@
     document.addEventListener("DOMContentLoaded", function () {
         const toggleButton = document.getElementById("toggleButton");
         const toggleButton2 = document.getElementById("toggleButton2");
+        const toggleButton3 = document.getElementById("toggleButton3");
         const documentationBox = document.getElementById("documentationBox");
         const documentationBox2 = document.getElementById("documentationBox2");
+        const documentationBox3 = document.getElementById("documentationBox3");
 
         toggleButton.addEventListener("click", function () {
             documentationBox.classList.toggle("hidden");
         });
         toggleButton2.addEventListener("click", function () {
             documentationBox2.classList.toggle("hidden");
+        });
+        toggleButton3.addEventListener("click", function () {
+            documentationBox3.classList.toggle("hidden");
         });
     });
 
